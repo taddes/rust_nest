@@ -1,7 +1,11 @@
-#[allow(dead_code)]
-#[allow(unused_variables)]
+#![allow(dead_code)]
+#![allow(unused_variables)]
 use std::mem;
 
+const SOLID_VALUE:u8 = 42;
+fn main() {
+
+}
 fn main() {
     let a: u8 = 123; // u = unsigned, 8 bits, 0 - 255
     println!("a = {}", a);
@@ -35,3 +39,5 @@ fn main() {
     let g: bool = false;
     println!("{} is {} bytes", g, mem::size_of_val(&g));
 }
+
+
