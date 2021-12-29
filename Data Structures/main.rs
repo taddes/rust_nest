@@ -25,7 +25,8 @@ fn enumeration() {
   enum Color {
     Red, 
     Green, 
-    Blue
+    Blue,
+    RGBColor(u8, u8, u8)
   }
 
   let c:Color = Color::Red;
@@ -34,6 +35,8 @@ fn enumeration() {
     Color::Red => println!("r"),
     Color::Green => println!("g"),
     Color::Blue => println!("b"),
+    Color::RGBColor(0, 0, 0) => println!("Black"),
+    Color::RGBColor(r, g, b) => println!("rgb {}, {}, {}", r, g, b),
     _ => println!("Something Else")
   }
 
