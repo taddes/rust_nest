@@ -16,4 +16,8 @@ fn main() {
 
   let c = 123456789; // i32 = 32 bits = 4 bytes
   println!("c = {}, c takes up {} bytes", c, mem::size_of_val(&c));
+
+  let z: isize = 123;
+  let size_of_z = mem::size_of_val(&z);
+  println!("z= {} takes up {} bytes, {}-bit OS", z, size_of_z, size_of_z*8)
 }
