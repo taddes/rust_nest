@@ -19,5 +19,11 @@ fn main() {
 
   let z: isize = 123;
   let size_of_z = mem::size_of_val(&z);
-  println!("z= {} takes up {} bytes, {}-bit OS", z, size_of_z, size_of_z*8)
+  println!("z= {} takes up {} bytes, {}-bit OS", z, size_of_z, size_of_z*8);
+
+  let d: char = 'x';
+  println!("{} is a char, size of {} bytes", d, mem::size_of_val(&d));
+
+  // f32 f64
+  
 }
