@@ -39,8 +39,23 @@ fn for_loop() {
   }
 }
 
+fn match_cases() {
+  let country_code = 44;
+
+  let country = match country_code {
+    44 => "UK",
+    1 => "US",
+    31 => "FI",
+    1..=1000 => "unknown",
+    _ => "invalid"
+  };
+
+  println!("The country with code {} is {}", country_code, country);
+}
+
 fn main() {
   if_stmt();
   while_loop();
   for_loop();
+  match_cases();
 }
