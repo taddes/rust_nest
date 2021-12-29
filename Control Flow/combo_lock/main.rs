@@ -35,7 +35,14 @@ fn main() {
         }
       }
       State::Failed => {
-        println!("FAILED")
+        println!("FAILED");
+        entry.clear(); // sets string to empty
+        state = State::Locked;
+        continue;
+      }
+      State::Unlocked => {
+        println!("UNLOCKED");
+        return;
 
       }
     }
