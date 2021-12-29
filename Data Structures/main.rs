@@ -33,7 +33,8 @@ fn enumeration() {
   match c {
     Color::Red => println!("r"),
     Color::Green => println!("g"),
-    Color::Blue => println!("b")
+    Color::Blue => println!("b"),
+    _ => println!("Something Else")
   }
 
 }
