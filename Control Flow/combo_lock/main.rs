@@ -30,6 +30,13 @@ fn main() {
           state = State::Unlocked;
           continue;
         }
+        if !code.starts_with(&entry) {
+          state = State::Failed;
+        }
+      }
+      State::Failed => {
+        println!("FAILED")
+
       }
     }
   }
