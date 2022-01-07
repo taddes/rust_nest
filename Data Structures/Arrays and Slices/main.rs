@@ -23,5 +23,14 @@ fn main() {
         [0.0, 2.0, 0.0]
     ];
 
-    println!("{:?}", mtx)
+    println!("{:?}", mtx);
+
+    // Slices
+    let data: [i32; 5] = [1,2,3,4,5];
+
+    fn use_slice(slice: &[i32]) {
+        println!("first elem = {}, len = {}", slice[0], slice.len());
+
+    }
+    use_slice(&data[1..4]);
 }
