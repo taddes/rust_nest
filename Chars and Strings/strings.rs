@@ -1,6 +1,10 @@
+#![allow(dead_code)]
+#![allow(unused_imports)]
+#![allow(unused_must_use)] 
 
 use std::thread;
 use std::time;
+
 fn strings() {
   // Vector of utf-8 characters
   // &str = string slice
