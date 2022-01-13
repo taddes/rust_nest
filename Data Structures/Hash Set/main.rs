@@ -41,4 +41,18 @@ fn main() {
     if removed {
       println!("delta was removed")
     }
+
+    let _1_5:HashSet<_> = (1..=5).collect();
+    let _6_10:HashSet<_> = (6..=10).collect();
+    let _1_10:HashSet<_> = (1..=10).collect();
+    let _2_8:HashSet<_> = (2..=8).collect();
+
+    // subset - are the elements of one collection contained in the other
+    println!(
+      "is {:?} a subset of {:?} {}",
+      _2_8, _1_10,
+      _2_8.is_subset(&_1_10)
+    );
+
+
 }
