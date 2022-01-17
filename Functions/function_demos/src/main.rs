@@ -2,6 +2,8 @@ fn main() {
     functions();
     let p: i32 = product(5,5);
     println!("{}", p);
+    methods();
+    closures();
 }
 
 fn print_value(x: i32) {
@@ -43,6 +45,16 @@ impl Line {
 
 fn methods() {
   let p = Point { x: 3.0, y: 4.2};
-  let 2p = Point { x: 5.0, y: 10.0};
+  let p2 = Point { x: 5.0, y: 10.0};
+  let myline = Line {start: p, end: p2};
 
+  println!("length = {}", myline.len());
+
+}
+
+// Closure example
+fn closures() {
+  let plus_one = |x:i32| -> i32 {x + 1};
+  let a = 6;
+  println!("{} + 1 = {}", a, plus_one(a));
 }
