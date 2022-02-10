@@ -6,12 +6,9 @@ fn read_file_contents(path: PathBuf) -> Result<String, Error> {
     let mut string = String::new();
     // Access a file at a specified path
     // ---------------------------------
-    // TODO #1:
-    // - Pass variable to `file` variable on success, or
-    // - Return from function early if there's an error
     let mut file: File = match File::open(path) {
-        Ok(file_handle) => todo!("Pass variable to file variable on success"),
-        Err(io_error) => todo!("Return the function early if error"),
+        Ok(file_handle) => file_handle,
+        Err(io_error) => return Err(io_error),
     };
 
     // Read file contents into `String` variable with `read_to_string`
@@ -19,13 +16,18 @@ fn read_file_contents(path: PathBuf) -> Result<String, Error> {
     // Success path is already filled in
     // TODO #2: Return from function early if there's an error
     match file.read_to_string(&mut string) {
-      Ok(_) => (),
-      Err(io_error) => todo!("Return from function early if error")
+        Ok(_) => (),
+        Err(io_error) => return Err(io_error),
     };
 
-    todo!("Return string variable")
+    Ok(string)
 }
 
 fn main() {
-    println!("Hello, world!");
+    if read_file_contents(PathBuf::from("main.rs")).is_ok() {
+        println!("The program found the main file.");
+    }
+    if read_file_contents(PathBuf::from("non-existent-file.txt")).is_err() {
+        println!("The program reported an error for the file that doesn't exist.");
+    }
 }
